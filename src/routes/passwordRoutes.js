@@ -3,6 +3,6 @@ const { generatePasswords } = require("../controllers/passwordController");
 
 const router = express.Router();
 
-router.post("/generate-passwords", generatePasswords);
+router.post("/generate-password", generatePasswords);
 
 module.exports = router;
