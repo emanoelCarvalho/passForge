@@ -1,0 +1,59 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2025-01-07T00:00:00.000Z",
+    "__export_source": "insomnia.desktop.app:v2023.6.0",
+    "resources": [
+      {
+        "_id": "req_generate_password",
+        "parentId": "wrk_passforge",
+        "modified": 1670457861000,
+        "created": 1670457861000,
+        "url": "http://localhost:3000/api/generate-password",
+        "name": "Generate Passwords",
+        "description": "Request to generate passwords for users.",
+        "method": "POST",
+        "body": {
+          "mimeType": "application/json",
+          "text": "{\n  \"users\": [\n    { \"nameAplication\": \"disney-app\", \"email\": \"disney@example.com\" },\n    { \"nameAplication\": \"another-app\", \"email\": \"another@example.com\" }\n  ]\n}"
+        },
+        "parameters": [],
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "authentication": {},
+        "metaSortKey": -1,
+        "_type": "request"
+      },
+      {
+        "_id": "req_generate_secret_key",
+        "parentId": "wrk_passforge",
+        "modified": 1670457861000,
+        "created": 1670457861000,
+        "url": "http://localhost:3000/api/generate-secret-key",
+        "name": "Generate Secret Key",
+        "description": "Request to generate a secret key for JWT.",
+        "method": "GET",
+        "body": {},
+        "parameters": [],
+        "headers": [],
+        "authentication": {},
+        "metaSortKey": -1,
+        "_type": "request"
+      },
+      {
+        "_id": "wrk_passforge",
+        "parentId": null,
+        "modified": 1670457861000,
+        "created": 1670457861000,
+        "name": "PassForge API",
+        "description": "Workspace for the PassForge API requests.",
+        "scope": null,
+        "_type": "workspace"
+      }
+    ]
+  }
+  
