@@ -1,6 +1,6 @@
 # PassForge: Password Generator API
 
-**PassForge** é uma aplicação desenvolvida para facilitar a geração de senhas seguras e personalizadas. Utilizando uma estrutura modular com Express.js, a API é capaz de processar solicitações em JSON para criar senhas robustas para uma lista de usuários, garantindo organização, escalabilidade e segurança.
+**PassForge** é uma aplicação desenvolvida para facilitar a geração de senhas seguras e personalizadas. Utilizando uma estrutura modular com Express.js, a API é capaz de processar solicitações em JSON para criar senhas robustas para uma lista de usuários, garantindo organização, escalabilidade e segurança. Além disso, agora possui a funcionalidade de geração de chaves secretas para JWT, úteis para projetos que utilizam autenticação.
 
 ---
 
@@ -8,8 +8,9 @@
 
 - Recebe um array de usuários via JSON.
 - Gera senhas seguras utilizando criptografia (método `crypto`).
+- Gera uma chave secreta única para uso em JWTs.
 - Estruturada com pastas para **controllers**, **services** e **routes**.
-- Retorna senhas no formato JSON.
+- Retorna respostas no formato JSON.
 
 ---
 
@@ -17,7 +18,7 @@
 
 - **Node.js**: Para o desenvolvimento do backend.
 - **Express.js**: Para criação do servidor e gerenciamento de rotas.
-- **Crypto**: Para geração de senhas criptograficamente seguras.
+- **Crypto**: Para geração de senhas criptograficamente seguras e chaves JWT.
 - **JavaScript (ES6+)**: Linguagem principal do projeto.
 
 ---
@@ -55,7 +56,7 @@ O servidor estará rodando em `http://localhost:3000`.
 
 ## **Como Utilizar**
 
-### **Endpoint Disponível**
+### **Endpoints Disponíveis**
 
 #### POST `/api/generate-password`
 
@@ -89,6 +90,19 @@ Envia uma lista de usuários para gerar senhas seguras.
 ]
 ```
 
+#### GET `/api/generate-secret-key`
+
+Gera uma chave secreta única para ser utilizada em autenticação JWT.
+
+**Resposta Esperada:**
+
+```json
+{
+    "message": "Chave secreta gerada com sucesso",
+    "secretKey": "yuiOSK2awP8aQfAM2yuiOSK2awP8aQfAM2/rlzrBZcwUv+B61Ltf7HWaBBAI="
+}
+```
+
 ---
 
 ## **Estrutura do Projeto**
@@ -100,14 +114,15 @@ project/
 ├── routes/
 │   └── passwordRoutes.js
 ├── services/
-│   └── passwordService.js
+│   ├── passwordService.js
+│   └── secretKeyService.js
 ├── app.js
 └── package.json
 ```
 
 - **`controllers/`**: Contém a lógica de controle que processa as requisições.
 - **`routes/`**: Define as rotas e seus respectivos controladores.
-- **`services/`**: Centraliza as regras de negócio, como a geração de senhas.
+- **`services/`**: Centraliza as regras de negócio, como a geração de senhas e chaves secretas.
 - **`app.js`**: Configuração principal da aplicação.
 
 ---
