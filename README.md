@@ -11,6 +11,7 @@
 - Gera uma chave secreta única para uso em JWTs.
 - Estruturada com pastas para **controllers**, **services** e **routes**.
 - Retorna respostas no formato JSON.
+- Inclui um arquivo de configuração `insomnia.json` para facilitar testes de API.
 
 ---
 
@@ -149,4 +150,3 @@ Caso tenha alguma dúvida, sugestão ou deseje colaborar no projeto, fique à vo
 ### **Contribuições**
 
 Contribuições são bem-vindas! Caso tenha ideias ou encontre bugs, abra uma issue ou envie um pull request no [repositório do projeto](https://github.com/emanoelCarvalho/passForge).
-
