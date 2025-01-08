@@ -11,3 +11,7 @@ const generateSecretKey = (res) => {
         });
     }
 }
+
+module.exports = {
+    generateSecretKey,
+}
