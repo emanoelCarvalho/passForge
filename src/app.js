@@ -6,6 +6,8 @@ const swaggerJsdoc = require("swagger-jsdoc");
 const passwordRoutes = require("./routes/passwordRoutes");
 const secretKeyRoutes = require("./routes/secretKeyRoutes");
 
+const app = express();
+
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -18,7 +20,9 @@ const options = {
 
   apis: ["./routes/*.js"],
 };
-const app = express();
+
+const swaggerSpec = swaggerJsdoc(options);
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(express.json());
 
