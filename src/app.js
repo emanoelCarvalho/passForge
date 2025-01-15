@@ -22,7 +22,7 @@ const options = {
 };
 
 const swaggerSpec = swaggerJsdoc(options);
-app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(express.json());
 
