@@ -1,9 +1,10 @@
 const express = require("express");
-require("dotenv").config();
 
 const passwordRoutes = require("./routes/passwordRoutes");
 const secretKeyRoutes = require("./routes/secretKeyRoutes");
-const PORT = process.env.PORT;
+const config = require("./services/configServices");
+
+const PORT = config.getEnv("PORT");
 const app = express();
 
 app.use(express.json());
