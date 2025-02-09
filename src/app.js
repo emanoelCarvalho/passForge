@@ -4,6 +4,8 @@ const passwordRoutes = require("./routes/passwordRoutes");
 const secretKeyRoutes = require("./routes/secretKeyRoutes");
 const config = require("./services/configServices");
 
+const log = require("./utils/logger");
+
 const PORT = config.getEnv("PORT");
 const app = express();
 
@@ -12,5 +14,5 @@ app.use("/api", passwordRoutes);
 app.use("/api", secretKeyRoutes);
 
 app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
+    log(`Server is running on port ${PORT}`);
 });
