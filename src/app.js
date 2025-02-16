@@ -15,6 +15,7 @@ const app = express();
 app.use(express.json());
 app.use("/api", passwordRoutes);
 app.use("/api", secretKeyRoutes);
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.listen(PORT, () => {
     log(`Server is running on port ${PORT}`);
