@@ -1,5 +1,8 @@
 const express = require("express");
 
+const swaggerUi = require("swagger-ui-express"); 
+const swaggerFile = require("../swagger_output.json");
+
 const passwordRoutes = require("./routes/passwordRoutes");
 const secretKeyRoutes = require("./routes/secretKeyRoutes");
 const config = require("./services/configServices");
